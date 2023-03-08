@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html th:replace="~{/layout/base :: base(~{::title}, ~{::div})}">
+<head>
+  <title th:text="${post.title}"></title>
+</head>
+<body>
+  <div class="max-w-2xl mx-auto px-2">
+    <h1 class="bold text-3xl" th:text="${post.title}"></h1>
+    <hr>
+    <span class="italic" th:text="|#{blog.post.createDate} ${#temporals.format(post.createdAt, 'yyyy-MM-dd')}|"></span>
+
+    <span th:if="${post.category != null}" th:text="${post.category.name}"></span>
+    <ul th:if="${post.tags != null}" th:each="tag: ${post.tags}">
+      <li th:text="${tag.name}"></li>
+    </ul>
+    <p class="text-base my-2" th:text="${post.content}"></p>
+    <hr>
+  </div>
+</body>
+</html>

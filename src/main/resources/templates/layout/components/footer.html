@@ -1,0 +1,8 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<footer th:fragment="footer" class="my-1">
+    <div class="flex justify-center py-1 gap-x-2">
+      <a th:href="${@environment.getProperty('blog.github_url')}" th:text="GitHub"></a>
+      <a th:href="|mailto:${@environment.getProperty('blog.email')}|" th:text="Email"></a>
+    </div>
+</footer>

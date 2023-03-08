@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html th:replace="~{/layout/base :: base(~{::title}, ~{::div})}">
+<head>
+    <title th:text="${@environment.getProperty('blog.title')}"></title>
+</head>
+<body>
+    <div class="max-w-2xl mx-auto px-2">
+        <table class="table-fixed">
+            <thead>
+                <tr>
+                    <th th:text="#{blog.post.allPosts}"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="post: ${posts}">
+                    <td>
+                        <a th:href="@{|/posts/${post.id}|}" th:text="${post.title}">링크</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

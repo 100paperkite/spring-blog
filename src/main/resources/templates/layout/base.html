@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html th:fragment="base(title, content)"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{/layout/components/header :: header(${title})}"></head>
+<body class="max-w-3xl mx-auto">
+  <nav th:replace="~{/layout/components/navBar :: navBar}"></nav>
+  <div class="my-4" th:insert="${content}">
+    <p>Contents</p>
+  </div>
+  <hr>
+  <footer th:replace="~{/layout/components/footer :: footer}"></footer>
+</body>
+
+</html>

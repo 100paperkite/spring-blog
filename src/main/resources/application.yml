@@ -1,0 +1,18 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  datasource:
+    url: ${DB_URI}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: ${DB_DRIVER}
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+blog:
+  title: ${BLOG_TITLE}
+  github_url: ${BLOG_GITHUB_URL}
+  email: ${BLOG_EMAIL}

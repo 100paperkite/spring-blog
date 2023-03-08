@@ -1,0 +1,12 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="header(title)">
+  <meta charset="UTF-8">
+  <title th:replace="${title}"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<head th:fragment="headerWithScripts(title, scripts)">
+  <title th:replace="~{/layout/components/header :: header(${title})}"></title>
+  <script th:replace="${scripts}"></script>
+</head>
