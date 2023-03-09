@@ -1,0 +1,7 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<section th:fragment="post(title, link, date)">
+    <a th:href="@{${link}}">
+      <h1 class="text-2xl bold" th:text="${title}"></h1>
+    </a>
+  <span class="text-sm text-gray-300" th:text="${#temporals.format(date, 'yyyy-MM-dd')}"></span>
+</section>

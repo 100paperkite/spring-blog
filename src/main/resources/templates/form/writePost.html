@@ -6,11 +6,21 @@
 </head>
 <body>
 <div class="min-h-screen h-screen flex">
-    <form action="" method="post" class="md:float-left w-full md:w-1/2 flex-1 flex flex-col h-full">
+    <form action="" method="post"  th:object="${post}"
+          class="md:float-left w-full md:w-1/2 flex-1 flex flex-col h-full">
         <div class="p-6">
             <div class="flex-auto h-90 flex flex-col">
-                <textarea name="title" class="flex-none text-2xl overflow-hidden resize-y" placeholder="제목을 입력하세요"></textarea>
-                <textarea name="content" id="content" class="grow overflow-hidden resize-y" placeholder="내용을 입력하세요..."></textarea>
+                <textarea name="title"
+                          th:field="*{title}"
+                          class="flex-none text-2xl overflow-hidden resize-y"
+                          placeholder="제목을 입력하세요"></textarea>
+                <label th:errors="*{title}" class="text-red-500"></label>
+                <textarea name="content"
+                          id="content"
+                          th:field="*{content}"
+                          class="grow overflow-hidden resize-y"
+                          placeholder="내용을 입력하세요..."></textarea>
+                <label th:errors="*{content}" class="text-red-500"></label>
             </div>
 
 
