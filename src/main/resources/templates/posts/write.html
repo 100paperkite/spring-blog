@@ -24,14 +24,14 @@
             </div>
 
 
-            <div class="flex-none fixed bottom-0 flex justify-end p-3">
-                <button class="rounded-full bg-sky-500 text-white px-3 py-1"
+            <div class="flex-none fixed bottom-0 flex p-3">
+                <button class="btn btn-active rounded-full"
                         type="submit"
                         th:text="#{blog.post.submit}">
                     글 발행
                 </button>
-                <button class="rounded-full bg-sky-500 text-white px-3 py-1"
-                        onclick="location.href=document.referrer"
+                <button class="btn btn-ghost rounded-full"
+                        th:onclick="|location.href='@{/}'|"
                         type="button"
                         th:text="#{blog.post.cancel}"
                 >

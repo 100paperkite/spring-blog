@@ -3,10 +3,9 @@
 <nav th:fragment="navBar"
      class="flex justify-between sticky top-0 z-50 space-x-4 py-2 font-medium mx-2 md:mx-6 my-1 md:my-2 p-2"
 >
-  <a th:href="@{/}" th:text="${@environment.getProperty('blog.title')}"></a>
+  <a th:href="@{/}" th:text="${@environment.getProperty('blog.title')}" class="my-auto bold text-lg"></a>
 
-  <button
-          class="bg-sky-500 text-white rounded-full py-1 px-3"
+  <button class="btn btn-active rounded-full"
           th:text="#{blog.post.create}"
           th:onclick="|location.href='@{/posts/write}'|">
   </button>

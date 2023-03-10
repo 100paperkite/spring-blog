@@ -1,4 +1,4 @@
-package com.example.blog.domain.form;
+package com.example.blog.web.form;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;

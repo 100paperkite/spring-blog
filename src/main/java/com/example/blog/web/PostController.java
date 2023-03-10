@@ -1,8 +1,8 @@
 package com.example.blog.web;
 
 import com.example.blog.domain.Post;
-import com.example.blog.domain.form.PostForm;
 import com.example.blog.service.PostService;
+import com.example.blog.web.form.PostForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -36,20 +36,20 @@ public class PostController {
         }
 
         model.addAttribute("post", post);
-        return "post";
+        return "posts/info";
     }
 
     @GetMapping("/write")
     public String writePostForm(Model model){
         model.addAttribute("post", new PostForm());
-        return "form/writePost";
+        return "posts/write";
     }
 
 
     @PostMapping("/write")
     public String savePost(@Validated @ModelAttribute("post") PostForm form, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()){
-            return "form/writePost";
+            return "posts/write";
         }
         Post post = Post.createPost(form.getTitle(), form.getContent(), null);
 

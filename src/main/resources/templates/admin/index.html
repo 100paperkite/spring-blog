@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{/layout/components/header :: header(~{::title})}">
+    <title>Admin</title>
+</head>
+<body class="flex h-screen">
+    <div class="w-72 m-auto text-center">
+        <form action="" th:object="${admin}" th:action="@{/admin/login}" method="post">
+            <div class="mb-4">
+                <div th:if="${#fields.hasGlobalErrors()}">
+                    <p class="text-red-500" th:each="err : ${#fields.globalErrors()}"
+                       th:text="${err}">전체 오류 메시지</p>
+                </div>
+                <div>
+                    <label class="label" for="adminId">
+                        <span class="label-text">ID</span>
+                    </label>
+                    <input type="text" id="adminId"  th:field="*{id}" name="id" class="input input-bordered w-full max-w-xs">
+                </div>
+
+                <div>
+                    <label class="label" for="adminPassword">
+                        <span class="label-text">Password</span>
+                    </label>
+                    <input type="password" th:field="*{password}" id="adminPassword" name="password" class="input input-bordered w-full max-w-xs">
+                </div>
+            </div>
+            <button class="btn btn-active w-full rounded-full" type="submit">Login</button>
+        </form>
+
+    </div>
+</body>
+</html>
