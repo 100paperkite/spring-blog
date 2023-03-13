@@ -1,0 +1,24 @@
+security:
+  jwt:
+    secret_key: "4B6150645367566B597033733676397924423F4528482B4D6251655468576D5A"
+    expire_duration: 300000 # 1000 * 60 * 5
+spring:
+  datasource:
+    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+    username: sa
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+blog:
+  title: 테스트
+  github_url:
+  email:
+
+  admin:
+    id: test
+    password: test
